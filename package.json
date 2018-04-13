@@ -1,0 +1,27 @@
+{
+  "name": "online-white-board",
+  "version": "1.0.0",
+  "description": "Online White Board that allows to draw pictures, write notes, and use various colors to flesh out ideas for projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Davlis/online-white-board.git"
+  },
+  "keywords": [
+    "online",
+    "white-board",
+    "whiteboard",
+    "notes",
+    "pictures",
+    "projects"
+  ],
+  "author": "Dawid Liszka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Davlis/online-white-board/issues"
+  },
+  "homepage": "https://github.com/Davlis/online-white-board#readme"
+}
