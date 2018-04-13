@@ -9,7 +9,7 @@ router.on({
   'menu': () => { moduleLoader('menu', 'view'); }
 });
 
-router.on(() => { loadHTML('./menu/menu.html', 'view'); });
+router.on(() => { moduleLoader('menu', 'view'); });
 router.notFound((query) => { console.log('Route not found, moving to menu'); moduleLoader('menu', 'view'); });
 router.resolve();
 

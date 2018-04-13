@@ -1,6 +1,8 @@
 function moduleLoader(moduleName, containerId, callback) {
-  loadHTML(moduleName + '/' + moduleName + '.html', containerId);
-  loadScript(moduleName + '/' + moduleName + '.js', callback);
+  var path = moduleName + '/' + moduleName;
+  loadHTML(path + '.html', containerId);
+  loadScript(path + '.js', callback);
+  loadCSS(path + '.css');
 }
 
 function loadScript(url, callback) {
@@ -22,13 +24,24 @@ function loadScript(url, callback) {
   head.appendChild(script);
 }
 
-function loadHTML(url, id) {
+function get(url, callback) {
   var req = new XMLHttpRequest();
   req.open('GET', url);
   req.send();
-  req.onload = () => {
-    $id(id).innerHTML = req.responseText;
-  };
+  req.onload = () => callback(req);
+}
+
+function loadHTML(url, id) {
+  get(url, (req) => $id(id).innerHTML = req.responseText)
+}
+
+function loadCSS(url) {
+  get(url, (req) => {
+    var style = document.createElement('style');
+    style.innerHTML = req.responseText;
+    var ref = document.querySelector('script');
+    ref.parentNode.insertBefore(style, ref);
+  })
 }
 
 function $id(id) {
