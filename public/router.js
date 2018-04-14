@@ -8,9 +8,11 @@ router.on({
   'board': () => { moduleLoader('board', 'view'); },
   'menu': () => { moduleLoader('menu', 'view'); }
 });
-
 router.on(() => { moduleLoader('menu', 'view'); });
-router.notFound((query) => { console.log('Route not found, moving to menu'); moduleLoader('menu', 'view'); });
+router.notFound((query) => { 
+  console.log('Route not found, moving to menu'); 
+  moduleLoader('menu', 'view'); 
+});
 router.resolve();
 
 function navigate(url) {
