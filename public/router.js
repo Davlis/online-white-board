@@ -5,6 +5,7 @@ var router = new Navigo(root, useHash, hash);
 
 router.on({
   'custom': () => { moduleLoader('custom', 'view'); },
+  'board/:roomId': () => { moduleLoader('board', 'view'); },
   'board': () => { moduleLoader('board', 'view'); },
   'menu': () => { moduleLoader('menu', 'view'); }
 });
